@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="00cbac16-49f5-4e13-98b6-e5be9d294710" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1llchhwCsij9rhsfe2CGnFyPcHk" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\19495\PycharmProjects\Learning Folder\Machine Learning\FlappyBirdNeat" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="flappy_bird" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="FlappyBirdNeat" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/flappy_bird.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.flappy_bird" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="00cbac16-49f5-4e13-98b6-e5be9d294710" name="Default Changelist" comment="" />
+      <created>1608175239199</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1608175239199</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1335" y="513" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608175874169">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1335" y="513" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1608175874169" />
+    <state width="1231" height="398" key="GridCell.Tab.0.bottom" timestamp="1608243699746">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1231" height="398" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1608243699746" />
+    <state width="1231" height="398" key="GridCell.Tab.0.center" timestamp="1608243699746">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1231" height="398" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1608243699745" />
+    <state width="1231" height="398" key="GridCell.Tab.0.left" timestamp="1608243699745">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1231" height="398" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1608243699745" />
+    <state width="1231" height="398" key="GridCell.Tab.0.right" timestamp="1608243699746">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1231" height="398" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1608243699746" />
+    <state x="1421" y="342" key="SettingsEditor" timestamp="1608176153794">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1421" y="342" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1608176153794" />
+    <state x="1661" y="354" key="refactoring.ChangeSignatureDialog" timestamp="1608190348829">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1661" y="354" key="refactoring.ChangeSignatureDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1608190348829" />
+    <state x="1583" y="332" width="672" height="678" key="search.everywhere.popup" timestamp="1608190391401">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1583" y="332" width="672" height="678" key="search.everywhere.popup/0.0.2560.1400@0.0.2560.1400" timestamp="1608190391401" />
+  </component>
+</project>
