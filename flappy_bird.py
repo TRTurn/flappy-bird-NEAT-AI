@@ -27,9 +27,7 @@ PIPE_IMAGE = pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "pi
 BASE_IMAGE = pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "base.png")))
 BACKGROUND_IMAGE = pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "bg.png")))
 
-SCORE_FONT = pygame.font.SysFont("Times New Roman", 50)
-
-
+SCORE_FONT = pygame.font.SysFont("Open Sans", 35)
 
 
 class Bird:
@@ -215,7 +213,7 @@ class Ground:
         window.blit(self.IMAGE, (self.x_end, self.y))
 
 
-def draw_window(window, bird, pipes, ground, score):
+def draw_window(window, birds, pipes, ground, score):
     """Draws the game window and its contents (Pipes, bird, ground, score)"""
     window.blit(BACKGROUND_IMAGE, (0, 0))
 
@@ -225,15 +223,42 @@ def draw_window(window, bird, pipes, ground, score):
     text = SCORE_FONT.render("Score: " + str(score), 1, (255, 255, 255))
     window.blit(text, (WIN_WIDTH - 10 - text.get_width(), 10))
     ground.draw(window)
-
-    bird.draw(window)
+    for bird in birds:
+        bird.draw(window)
     pygame.display.update()
 
 
-def main():
+def run(config_path):
+    """Initializes NEAT module with config.txt data"""
+    config = neat.config.Config(neat.DefaultGenome, neat.DefaultReproduction,
+                                neat.DefaultSpeciesSet, neat.DefaultStagnation, config_path)
+
+    # Creates a population based on config file
+    population = neat.Population(config)
+
+    population.add_reporter(neat.StdOutReporter(True))
+    # stats = neat.StatisticsReporter()
+    # population.add_reporter(stats)
+    population.add_reporter(neat.StatisticsReporter())
+
+    fitness_test = population.run(main, 50)
+
+
+# All fitness functions require genomes and config to be passed
+def main(genomes, config):
     """Where the game gets run"""
     # Create objects start clock and initialize score
-    bird = Bird(230, 350)
+    birds = []
+    networks = []
+    ge = []
+
+    for _, genome in genomes:
+        net = neat.nn.FeedForwardNetwork.create(genome, config)
+        networks.append(net)
+        birds.append(Bird(230, 350))
+        genome.fitness = 0
+        ge.append(genome)
+
     ground = Ground(730)
     pipes = [Pipe(700)]
     window = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
@@ -246,45 +271,73 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
+                pygame.quit()
+                quit()
 
-        bird.move()
+        pipe_index = 0
+        if len(birds) > 0:
+            if len(pipes) > 1 and birds[0].x > pipes[0].x + pipes[0].PIPE_TOP.get_width():
+                pipe_index = 1
+        else:
+            # If no birds left quit the game
+            run = False
+            break
+
+        for x, bird in enumerate(birds):
+            bird.move()
+            ge[x].fitness += 0.1
+
+            output = networks[x].activate((bird.y, abs(bird.y - pipes[pipe_index].height),
+                                           abs(bird.y - pipes[pipe_index].bottom)))
+            #
+            if output[0] > 0.5:
+                bird.jump()
 
         add_pipe = False
         pipe_removal = []
-
         for pipe in pipes:
-            if pipe.collide(bird):
-                pass
+            for x, bird in enumerate(birds):
+                # If bird collides with a pipe it is removed from the game
+                if pipe.collide(bird):
+                    ge[x].fitness -= 1
+                    birds.pop(x)
+                    networks.pop(x)
+                    ge.pop(x)
+
+                # If bird has passed pipe
+                if not pipe.passed and (pipe.x < bird.x):
+                    pipe.passed = True
+                    add_pipe = True
 
             # If pipe is off screen remove pipe
             if pipe.x + pipe.PIPE_TOP.get_width() < 0:
                 pipe_removal.append(pipe)
-
-            # If bird has passed pipe
-            if not pipe.passed and (pipe.x < bird.x):
-                pipe.passed = True
-                add_pipe = True
 
             pipe.move()
 
         # Add new pipe once player passes pipe
         if add_pipe:
             score += 1
-            pipes.append(Pipe(700))
+            for genome in ge:
+                genome.fitness += 5
+            pipes.append(Pipe(600))
 
         # Remove off-screen pipes
         for pipe in pipe_removal:
             pipes.remove(pipe)
 
         # If bird collides with the ground
-        if bird.y + bird.image.get_height() >= ground.y:
-            pass
+        for x, bird in enumerate(birds):
+            if bird.y + bird.image.get_height() >= ground.y or bird.y < 0:
+                birds.pop(x)
+                networks.pop(x)
+                ge.pop(x)
 
         ground.move()
-        draw_window(window, bird, pipes, ground, score)
-
-    pygame.quit()
-    quit()
+        draw_window(window, birds, pipes, ground, score)
 
 
-main()
+if __name__ == '__main__':
+    local_dir = os.path.dirname(__file__)
+    config_path = os.path.join(local_dir, "config.txt")
+    run(config_path)
