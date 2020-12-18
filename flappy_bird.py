@@ -4,7 +4,6 @@
 
 import pygame
 import neat
-import time
 import os
 import random
 
@@ -15,10 +14,10 @@ pygame.font.init()
 # Constants for PyGame
 ######################################
 # Screensize
-WIN_WIDTH = 500
-WIN_HEIGHT = 800
+WINDOW_WIDTH = 500
+WINDOW_HEIGHT = 800
 
-# 3 Images of Bird to mimic flapping.
+# Object Images
 BIRD_IMAGES = [pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "bird1.png"))),
                pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "bird2.png"))),
                pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "bird3.png")))]
@@ -27,8 +26,10 @@ PIPE_IMAGE = pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "pi
 BASE_IMAGE = pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "base.png")))
 BACKGROUND_IMAGE = pygame.transform.scale2x(pygame.image.load(os.path.join("imgs", "bg.png")))
 
-SCORE_FONT = pygame.font.SysFont("Open Sans", 35)
+# Font for Score and Generation Counter
+GAME_FONT = pygame.font.SysFont("Open Sans", 35)
 
+GENERATION = 0
 
 class Bird:
     """Creates a bird object for the player to control"""
@@ -93,7 +94,6 @@ class Bird:
 
         # Cycles through bird images in accordance with "frame rate"
         self.image_count += 1
-
         if self.image_count < self.ANIMATION_TIME * 2:
             self.image = self.IMAGES[0]
         elif self.image_count < self.ANIMATION_TIME * 3:
@@ -145,6 +145,7 @@ class Pipe:
         self.set_height()
 
     def set_height(self):
+        """Assigns pipe object to a random height and adjusts top and bottom pipe heights accordingly to preserve gap size"""
         self.height = random.randrange(50, 450)
 
         # Adjust where image is drawn on top
@@ -152,11 +153,11 @@ class Pipe:
         self.bottom = self.height + self.GAP
 
     def move(self):
-        """Moves Pipe Horizontally Across the window"""
+        """Moves pipe horizontally toward the left edge of the window"""
         self.x -= self.VELOCITY
 
     def draw(self, window):
-        """Draws pipe on screen"""
+        """Draws upper and lower pipe on screen at their respective heights. Vertical gap size between pipes is constant."""
         window.blit(self.PIPE_TOP, (self.x, self.top))
         window.blit(self.PIPE_BOTTOM, (self.x, self.bottom))
 
@@ -164,7 +165,7 @@ class Pipe:
         """
         Detects whether or not the bird has collided with either the top or bottom pipe
         :param bird: Bird object
-        :return: A boolean corresponding to whether or not the bird image overlaps either pipe image
+        :return: A boolean corresponding to whether or not the bird image overlaps either pipe image indicating a collision
         """
         bird_mask = bird.get_mask()
         top_mask = pygame.mask.from_surface(self.PIPE_TOP)
@@ -186,7 +187,7 @@ class Ground:
     #######################
     # Ground Constants
     #######################
-    VELOCITY = 5  # Same as pipe speed
+    VELOCITY = 5  # Same as pipe velocity
     WIDTH = BASE_IMAGE.get_width()
     IMAGE = BASE_IMAGE
 
@@ -197,11 +198,10 @@ class Ground:
 
     def move(self):
         """Controls movement for the ground object"""
-        # Ground moves at same velocity as pipes
         self.x_start -= self.VELOCITY
         self.x_end -= self.VELOCITY
 
-        # Loops ground image
+        # Loops ground image with a copy of itself
         if self.x_start + self.WIDTH < 0:
             self.x_start = self.x_end + self.WIDTH
         if self.x_end + self.WIDTH < 0:
@@ -213,18 +213,29 @@ class Ground:
         window.blit(self.IMAGE, (self.x_end, self.y))
 
 
-def draw_window(window, birds, pipes, ground, score):
-    """Draws the game window and its contents (Pipes, bird, ground, score)"""
+def draw_window(window, birds, pipes, ground, score, generation):
+    """Draws the game window and its contents. (Note: Objects later in the method will be drawn over other objects. i.e. the ground will be drawn over the pipes. """
+
     window.blit(BACKGROUND_IMAGE, (0, 0))
 
     for pipe in pipes:
         pipe.draw(window)
 
-    text = SCORE_FONT.render("Score: " + str(score), 1, (255, 255, 255))
-    window.blit(text, (WIN_WIDTH - 10 - text.get_width(), 10))
     ground.draw(window)
+
     for bird in birds:
         bird.draw(window)
+
+
+    # Controls Score Display. Score readjusts positioning if it gets too large
+    score_text = GAME_FONT.render("Score: " + str(score), True, (255, 255, 255))
+    window.blit(score_text, (WINDOW_WIDTH - 10 - score_text.get_width(), 10))
+
+    # Generation Display
+    gen_text = GAME_FONT.render("Gen: " + str(generation), True, (255, 255, 255))
+    window.blit(gen_text, (10, 10))
+
+
     pygame.display.update()
 
 
@@ -236,18 +247,21 @@ def run(config_path):
     # Creates a population based on config file
     population = neat.Population(config)
 
+    # Prints Generation data to console
     population.add_reporter(neat.StdOutReporter(True))
-    # stats = neat.StatisticsReporter()
-    # population.add_reporter(stats)
     population.add_reporter(neat.StatisticsReporter())
 
-    fitness_test = population.run(main, 50)
+    most_fit = population.run(main, 50)  # This is the most fit bird when the program stops
 
 
 # All fitness functions require genomes and config to be passed
 def main(genomes, config):
     """Where the game gets run"""
-    # Create objects start clock and initialize score
+    # Generation Counter
+    global GENERATION
+    GENERATION += 1
+
+
     birds = []
     networks = []
     ge = []
@@ -259,13 +273,16 @@ def main(genomes, config):
         genome.fitness = 0
         ge.append(genome)
 
+    # Create objects start clock and initialize score
     ground = Ground(730)
     pipes = [Pipe(700)]
-    window = pygame.display.set_mode((WIN_WIDTH, WIN_HEIGHT))
+    window = pygame.display.set_mode((WINDOW_WIDTH, WINDOW_HEIGHT))
     clock = pygame.time.Clock()
     score = 0
 
     run = True
+
+    # Main Game Loop
     while run:
         clock.tick(30)
         for event in pygame.event.get():
@@ -289,7 +306,7 @@ def main(genomes, config):
 
             output = networks[x].activate((bird.y, abs(bird.y - pipes[pipe_index].height),
                                            abs(bird.y - pipes[pipe_index].bottom)))
-            #
+            # Tanh >= 0.5
             if output[0] > 0.5:
                 bird.jump()
 
@@ -297,6 +314,7 @@ def main(genomes, config):
         pipe_removal = []
         for pipe in pipes:
             for x, bird in enumerate(birds):
+
                 # If bird collides with a pipe it is removed from the game
                 if pipe.collide(bird):
                     ge[x].fitness -= 1
@@ -304,7 +322,7 @@ def main(genomes, config):
                     networks.pop(x)
                     ge.pop(x)
 
-                # If bird has passed pipe
+
                 if not pipe.passed and (pipe.x < bird.x):
                     pipe.passed = True
                     add_pipe = True
@@ -333,8 +351,13 @@ def main(genomes, config):
                 networks.pop(x)
                 ge.pop(x)
 
+        # Max score value
+        if score > 150:
+            run = False
+            break
+
         ground.move()
-        draw_window(window, birds, pipes, ground, score)
+        draw_window(window, birds, pipes, ground, score, GENERATION)
 
 
 if __name__ == '__main__':
