@@ -251,12 +251,12 @@ def run(config_path):
     population.add_reporter(neat.StdOutReporter(True))
     population.add_reporter(neat.StatisticsReporter())
 
-    most_fit = population.run(main, 50)  # This is the most fit bird when the program stops
+    most_fit = population.run(main, 50)  # This is the most fit bird when the program stops. Can be saved with pickle
 
 
 # All fitness functions require genomes and config to be passed
 def main(genomes, config):
-    """Where the game gets run"""
+    """Where the game + NEAT gets run"""
     # Generation Counter
     global GENERATION
     GENERATION += 1
@@ -280,6 +280,7 @@ def main(genomes, config):
     clock = pygame.time.Clock()
     score = 0
 
+    # For game loop
     run = True
 
     # Main Game Loop
@@ -287,7 +288,7 @@ def main(genomes, config):
         clock.tick(30)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
-                run = False
+                run = False # Redundancy
                 pygame.quit()
                 quit()
 
@@ -297,7 +298,7 @@ def main(genomes, config):
                 pipe_index = 1
         else:
             # If no birds left quit the game
-            run = False
+            run = False  # Redundancy
             break
 
         for x, bird in enumerate(birds):
@@ -353,7 +354,7 @@ def main(genomes, config):
 
         # Max score value
         if score > 150:
-            run = False
+            run = False  # Redundancy
             break
 
         ground.move()
@@ -362,5 +363,5 @@ def main(genomes, config):
 
 if __name__ == '__main__':
     local_dir = os.path.dirname(__file__)
-    config_path = os.path.join(local_dir, "config.txt")
-    run(config_path)
+    config_txt_path = os.path.join(local_dir, "config.txt")
+    run(config_txt_path)
