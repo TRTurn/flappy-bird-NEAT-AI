@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="00cbac16-49f5-4e13-98b6-e5be9d294710" name="Default Changelist" comment="" />
+    <list default="true" id="00cbac16-49f5-4e13-98b6-e5be9d294710" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -102,24 +105,32 @@
       <option name="project" value="LOCAL" />
       <updated>1608650479064</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Removed bloat files.">
+      <created>1608650964517</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608650964517</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="NEAT integration complete. The birds learn. Optimal population size for neuroevolution &lt;= 10" />
     <MESSAGE value="Added additional documentation. Removed unnecessary redundancies." />
     <MESSAGE value="Initial Commit to Github. Also updated activation function from Tanh to Relu" />
-    <option name="LAST_COMMIT_MESSAGE" value="Initial Commit to Github. Also updated activation function from Tanh to Relu" />
+    <MESSAGE value="Removed bloat files." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed bloat files." />
   </component>
   <component name="WindowStateProjectService">
     <state x="1335" y="513" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608175874169">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1335" y="513" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1608175874169" />
-    <state x="1511" y="305" width="850" height="929" key="CommitChangelistDialog2" timestamp="1608650478648">
+    <state x="1511" y="305" width="850" height="929" key="CommitChangelistDialog2" timestamp="1608650962843">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1511" y="305" width="850" height="929" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1608650478648" />
+    <state x="1511" y="305" width="850" height="929" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1608650962843" />
     <state x="1700" y="466" key="FileChooserDialogImpl" timestamp="1608252542773">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -148,10 +159,10 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1421" y="342" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1608650204115" />
-    <state x="1512" y="436" key="Vcs.Push.Dialog.v2" timestamp="1608650484397">
+    <state x="1512" y="436" key="Vcs.Push.Dialog.v2" timestamp="1608650966405">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1512" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1608650484397" />
+    <state x="1512" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1608650966405" />
     <state x="1661" y="354" key="refactoring.ChangeSignatureDialog" timestamp="1608190348829">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
