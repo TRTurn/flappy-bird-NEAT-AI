@@ -9,4 +9,4 @@ The parameters of the network can be directly adjusted in the config.txt.
 
 Simply run the flappy-bird.py file directly to run the game and see the AI learn in real time. 
 
-Note: Smaller sample sizes (can be directly edited in the config.txt under ppp_size) can show the learning better as large population sizes ( > 50) often only require one or two generations to begin having perfect runs.
+Note: Smaller sample sizes (can be directly edited in the config.txt under pop_size) can show the learning better as large population sizes ( > 50) often only require one or two generations to begin having perfect runs.
