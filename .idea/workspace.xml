@@ -132,7 +132,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608651302880</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Updated pop_size to 15 to better visualize learning">
+      <created>1608651892873</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1608651892873</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -141,17 +148,18 @@
     <MESSAGE value="Initial Commit to Github. Also updated activation function from Tanh to Relu" />
     <MESSAGE value="Removed bloat files." />
     <MESSAGE value="Updating .gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updating .gitignore" />
+    <MESSAGE value="Updated pop_size to 15 to better visualize learning" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated pop_size to 15 to better visualize learning" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1335" y="513" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608175874169">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1335" y="513" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1608175874169" />
-    <state x="1511" y="305" width="850" height="929" key="CommitChangelistDialog2" timestamp="1608651302432">
+    <state x="1511" y="305" width="850" height="929" key="CommitChangelistDialog2" timestamp="1608651892475">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1511" y="305" width="850" height="929" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1608651302432" />
+    <state x="1511" y="305" width="850" height="929" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1608651892475" />
     <state x="1700" y="466" key="FileChooserDialogImpl" timestamp="1608252542773">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
@@ -160,30 +168,30 @@
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1784" y="596" key="Github.ShareDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1608650311033" />
-    <state width="1233" height="403" key="GridCell.Tab.0.bottom" timestamp="1608650931663">
+    <state width="1233" height="403" key="GridCell.Tab.0.bottom" timestamp="1608651899046">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1233" height="403" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1608650931663" />
-    <state width="1233" height="403" key="GridCell.Tab.0.center" timestamp="1608650931663">
+    <state width="1233" height="403" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1608651899046" />
+    <state width="1233" height="403" key="GridCell.Tab.0.center" timestamp="1608651899046">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1233" height="403" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1608650931663" />
-    <state width="1233" height="403" key="GridCell.Tab.0.left" timestamp="1608650931663">
+    <state width="1233" height="403" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1608651899046" />
+    <state width="1233" height="403" key="GridCell.Tab.0.left" timestamp="1608651899046">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1233" height="403" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1608650931663" />
-    <state width="1233" height="403" key="GridCell.Tab.0.right" timestamp="1608650931663">
+    <state width="1233" height="403" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1608651899046" />
+    <state width="1233" height="403" key="GridCell.Tab.0.right" timestamp="1608651899046">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1233" height="403" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1608650931663" />
+    <state width="1233" height="403" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1608651899046" />
     <state x="1421" y="342" key="SettingsEditor" timestamp="1608650204115">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1421" y="342" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1608650204115" />
-    <state x="1512" y="436" key="Vcs.Push.Dialog.v2" timestamp="1608651312206">
+    <state x="1512" y="436" key="Vcs.Push.Dialog.v2" timestamp="1608651894281">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1512" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1608651312206" />
+    <state x="1512" y="436" key="Vcs.Push.Dialog.v2/0.0.2560.1400@0.0.2560.1400" timestamp="1608651894281" />
     <state x="1661" y="354" key="refactoring.ChangeSignatureDialog" timestamp="1608190348829">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
