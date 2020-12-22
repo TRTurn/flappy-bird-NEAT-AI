@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="00cbac16-49f5-4e13-98b6-e5be9d294710" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/FlappyBirdNeat.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/FlappyBirdNeat.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flappy_bird.py" beforeDir="false" afterPath="$PROJECT_DIR$/flappy_bird.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,42 +85,58 @@
       <option name="project" value="LOCAL" />
       <updated>1608248743895</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Added additional documentation. Removed unnecessary redundancies.">
+      <created>1608251550637</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1608251550637</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="NEAT integration complete. The birds learn. Optimal population size for neuroevolution &lt;= 10" />
-    <option name="LAST_COMMIT_MESSAGE" value="NEAT integration complete. The birds learn. Optimal population size for neuroevolution &lt;= 10" />
+    <MESSAGE value="Added additional documentation. Removed unnecessary redundancies." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added additional documentation. Removed unnecessary redundancies." />
   </component>
   <component name="WindowStateProjectService">
     <state x="1335" y="513" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608175874169">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
     <state x="1335" y="513" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1608175874169" />
-    <state x="1511" y="305" key="CommitChangelistDialog2" timestamp="1608248743411">
+    <state x="1511" y="305" width="850" height="929" key="CommitChangelistDialog2" timestamp="1608650370629">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1511" y="305" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1608248743411" />
-    <state width="1231" height="398" key="GridCell.Tab.0.bottom" timestamp="1608250791133">
+    <state x="1511" y="305" width="850" height="929" key="CommitChangelistDialog2/0.0.2560.1400@0.0.2560.1400" timestamp="1608650370629" />
+    <state x="1700" y="466" key="FileChooserDialogImpl" timestamp="1608252542773">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1231" height="398" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1608250791133" />
-    <state width="1231" height="398" key="GridCell.Tab.0.center" timestamp="1608250791133">
+    <state x="1700" y="466" key="FileChooserDialogImpl/0.0.2560.1400@0.0.2560.1400" timestamp="1608252542773" />
+    <state x="1784" y="596" key="Github.ShareDialog" timestamp="1608650311033">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1231" height="398" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1608250791133" />
-    <state width="1231" height="398" key="GridCell.Tab.0.left" timestamp="1608250791133">
+    <state x="1784" y="596" key="Github.ShareDialog/0.0.2560.1400@0.0.2560.1400" timestamp="1608650311033" />
+    <state width="1233" height="403" key="GridCell.Tab.0.bottom" timestamp="1608650212337">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1231" height="398" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1608250791133" />
-    <state width="1231" height="398" key="GridCell.Tab.0.right" timestamp="1608250791133">
+    <state width="1233" height="403" key="GridCell.Tab.0.bottom/0.0.2560.1400@0.0.2560.1400" timestamp="1608650212337" />
+    <state width="1233" height="403" key="GridCell.Tab.0.center" timestamp="1608650212337">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state width="1231" height="398" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1608250791133" />
-    <state x="1421" y="342" key="SettingsEditor" timestamp="1608176153794">
+    <state width="1233" height="403" key="GridCell.Tab.0.center/0.0.2560.1400@0.0.2560.1400" timestamp="1608650212337" />
+    <state width="1233" height="403" key="GridCell.Tab.0.left" timestamp="1608650212336">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
-    <state x="1421" y="342" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1608176153794" />
+    <state width="1233" height="403" key="GridCell.Tab.0.left/0.0.2560.1400@0.0.2560.1400" timestamp="1608650212336" />
+    <state width="1233" height="403" key="GridCell.Tab.0.right" timestamp="1608650212337">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="1233" height="403" key="GridCell.Tab.0.right/0.0.2560.1400@0.0.2560.1400" timestamp="1608650212337" />
+    <state x="1421" y="342" key="SettingsEditor" timestamp="1608650204115">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1421" y="342" key="SettingsEditor/0.0.2560.1400@0.0.2560.1400" timestamp="1608650204115" />
     <state x="1661" y="354" key="refactoring.ChangeSignatureDialog" timestamp="1608190348829">
       <screen x="0" y="0" width="2560" height="1400" />
     </state>
